@@ -22,7 +22,38 @@ reference text here
 \section{System description}
 description text here
 \section{Functional requirements}
-Add subsections as needed
+	\subsection{System features}
+	\section*{Mark API}
+	\begin{itemize}
+		\item Must interface with CS website login details or is it LDAP?
+		\item Must use Soap interface through out all applications.
+		\item Must Facilitate marking sessions.
+		\item Marking sessions must coincide with practical sessions.
+		\item Marking session durations must also be personalizable by the client.
+		\item Marker(s) must be able to record marks during marking sessions.
+		\item Marks must be stored in a database.
+		\item Database must be exportable to a .csv file.
+		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
+		\item Unlocked databases must allow marker(s) to alter marks.
+		\item Altered marks must include reason for alteration.
+		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
+	\end{itemize}
+	\subsection*{Android User Interface}
+	\begin{itemize}
+		\item Marker(s) must be able to select a marking session(s).
+		\item Student(s) must be able to check acquired marks.
+		\item Marks recorded by marker must be stored on local database.
+		\item Local database must synchronize with server database.
+	\end{itemize}
+	\subsection*{Web User Interface}
+	\begin{itemize}
+		\item Must be implemented through Django.
+  		\item Students must be able to view their marks
+  		\item Must facilitate markers/students who don't use android enabled mobile devices.
+	\end{itemize}
+	\section*{Booking API}
+	Must interface with Computer Science website booking system.
+\subsection{Use-Cases}
 \section{External interface requirements}
 Add subsections as needed
 \section{Technical/Non-functional requirements}
