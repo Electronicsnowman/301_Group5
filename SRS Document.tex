@@ -13,11 +13,23 @@
 \subsection{Purpose}
 The purpose of this document is to form a legally binding common ground between the stakeholders and the developers. This document will stipulate the functional as well as non-functional requirements of a system that will allow various contributors to collect, navigate and manipulate the marks of students studying at the university of Pretoria, as well as allow the students to view their marks.
 \subsection{Document conventions}
-
+\begin{description}
+\item Documentation formulation: LaTeX
+\item Entity Relationship Diagram Notation: Crows Foot 
+\end{description}
 \subsection{Project cope}
-scope text here
+This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
+\begin{enumerate}
+\item Level 1 users (such as Students) should be able to view their own marks.
+\item Level 2 users (such as Teaching Assistants and Tutors) will be able to view any students marks that are in a session that the level 2 person is assigned to. This level will also give access to adding as well as modifying marks.
+\item Level 3 users (such as lecturers) will be able to configure mark roll-ups, add assessment opportunities and draw reports from all of the marks of the subjects of which he is assigned to. This level will also have all of the privileges of level 1 as well as level 2 users.
+\item Level 4. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to be able to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
+\end{enumerate}
+These tools will be available in a web based interface as well as an Android interface.
 \subsection{References}
-reference text here
+
+Jan kroeze : by means of requirement extraction at meetings on 7 and 14 February 2014
+
 \section{System description}
 description text here
 \section{Functional requirements}
