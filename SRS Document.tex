@@ -66,7 +66,80 @@ description text here
 	Must interface with Computer Science website booking system.
 \subsection{Use-Cases}
 \section{External interface requirements}
-Add subsections as needed
+\section{External interface Requirements}
+\label{External interface Requirements}
+
+
+\subsection{User Interfaces}
+\label{User Interfaces}
+
+
+\subsubsection{Login Interface}
+\label{Login Interface}
+\begin{itemize}
+\item Users should be prompt to provide their student/personnel number and password on their interaction with the system.	
+\item The system will notify the user if the login information is invalid or navigate to the user's home page if the information is valid.
+\end{itemize}
+\subsubsection{Student interface}
+\label{Student interface}
+\begin{itemize}
+\item Students should be able to view a list of the subjects they are enrolled for. Each subject should link to all its activity marks page.
+\item Students should be able to export all their marks for a specific subject or all subjects.
+\end{itemize}
+\subsubsection{Teaching Assistance or Marker interface}
+\label{Teaching Assistance or Marker interface}
+
+\begin{itemize}
+\item Markers should be able to view the list of all the subjects they are responsible for.
+\item Markers should also be able to view all the sessions they are responsible for, along with their venues and times.
+\item Markers should also be able to view a list of students booked for that session.
+\item Marker should be able to view previous and current session marks, and they should be able to update those marks.
+\item Marker should be able to search for a student by providing name, surname, or student number.
+\end{itemize}
+
+\subsubsection{Lecture interface}
+\label{Lecture interface}
+
+\begin{itemize}
+\item The lecture should be able to view the list of all courses they are responsible for. Each course should link to an evaluation category page.
+\item The lecture should be able to provide mark rollup for each category or for a specific assessment.
+\item The lecture should be able to view or edit the marks of a student.
+\item The lecture should be able to search for a student by providing a name, surname, or student number.
+\item The lecture should be able to export marks.
+\item The lecture should be able to generate a report of changes made by markers to student marks.
+\end{itemize}
+
+\subsection{Hardware Interfaces}
+\label{Hardware Interfaces}
+The system is intended as a mobile application for the android platform and a web server, therefore it is supported on android powered devices and also on all devices with a web browser.
+\subsection{Software Interfaces}
+\label{Software Interfaces}
+
+The system is to be developed under the android operating system and via a web server using Django and Python as the server side implementation, SOAP API, and Android SDK for the mobile application.
+\begin{itemize}
+\item Outgoing data consist of semester marks, year marks, practical marks, assignment marks, project marks, and audit reports.
+\item Incoming data consist of mark updates, assignment flags, evaluation categories, mark rollup, number of assessments, student numbers for search purposes and names and surnames.
+
+\item communication between the userâ€™s phone or web browser and the server will occur when:
+
+\begin{itemize}
+\item A marker adds new student marks
+\item A marker updates student mark
+\item A lecture updates student marks
+\item A lecture specify a mark rollup for each category or each assessment
+\item A student view or export their marks
+\item A lecture or marker search for a student
+
+\end{itemize}
+\end{itemize}
+
+\subsection{Communication Interfaces}
+\label{Communication Interfaces}
+The system will have a network server which is web based and implemented using Django, Python, and SOAP API as an interface.
+The serverâ€™s purpose is to allow requests and responses between itself and the database. 
+The system calls for the database system that stores students, lectures, teaching assistance, and courses information.
+All the requests from the devices are sent to the SOAP API and the API will send the responses back to the devices.
+
 \section{Technical/Non-functional requirements}
 Add subsections as needed
 \section{Open issues}
