@@ -10,13 +10,16 @@
 \tableofcontents
 \pagebreak
 \section{Introduction}
+
 \subsection{Purpose}
 The purpose of this document is to form a legally binding common ground between the stakeholders and the developers. This document will stipulate the functional as well as non-functional requirements of a system that will allow various contributors to collect, navigate and manipulate the marks of students studying at the university of Pretoria, as well as allow the students to view their marks.
+
 \subsection{Document conventions}
 \begin{description}
 \item Documentation formulation: LaTeX
 \item Entity Relationship Diagram Notation: Crows Foot 
 \end{description}
+
 \subsection{Project cope}
 This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
 \begin{enumerate}
@@ -26,302 +29,33 @@ This project ,when finalized, should act as a holistic marks management system. 
 \item Level 4. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to be able to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
 \end{enumerate}
 These tools will be available in a web based interface as well as an Android interface.
-\subsection{References}
 
-Jan kroeze : by means of requirement extraction at meetings on 7 and 14 February 2014
+\section{Vision}
+The vision of the project is to create multiple interfaces that communicate with a centralized database to record mark results, audit, manage, manipulate, modify and report results based on these results into a pdf or csv format.
+The system will be vastly scalable and allow multiple users to interface with the application at the same time. It will provide resource management utilities that will cater to the performance and reliability. Thus the client’s actions will be correctly reflected on the system.
 
-\section{System description}
-description text here
-\section{Functional requirements}
-	\subsection{System features}
-	\section*{Mark API}
-	\begin{itemize}
-		\item Must interface with CS website login details.
-		\item Must use Soap interface through out all applications.
-		\item Must Facilitate marking sessions.
-		\item Marking sessions must coincide with practical sessions.
-		\item Marking session durations must also be personalizable by the client.
-		\item Marker(s) must be able to record marks during marking sessions.
-		\item Marks must be stored in a database.
-		\item Database must be exportable to a .csv file.
-		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
-		\item Unlocked databases must allow marker(s) to alter marks.
-		\item Altered marks must include reason for alteration.
-		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
-	\end{itemize}
-	\subsection*{Android User Interface}
-	\begin{itemize}
-		\item Marker(s) must be able to select a marking session(s).
-		\item Student(s) must be able to check acquired marks.
-		\item Marks recorded by marker must be stored on local database.
-		\item Local database must synchronize with server database.
-	
-		\item \subsubsection*{Participant Login}
-		\begin{itemize}
-			\item Participants must enter their username and password.
-			\item Authorization will determine if participant is a student or marker. 
-			\item Eligible students should be directly shown the view marks screen.
-			\item Eligible markers should be given an option to choose from the Record Marks function to the View Marks function.
-		\end{itemize}
-		
-		\item \subsubsection*{View Marks API}
-		\begin{itemize}
-			\item Participants must be shown a selection of all the modules they are enrolled for which use this system. 
-			\item Once a module has been selected by a student the participant acquired marks are shown to them.
-		\end{itemize}
-		
-		\item \subsubsection*{Record Marks API}
-		\begin{itemize}
-			\item Marker is shown all the marking sessions he/she is enlisted for.
-			\item Once marker selects a marking session they can search a specific student by name/student number to which marks will be recorded for.
-			\item Altering marks works in a similar fashion.
-		\end{itemize}
-	\end{itemize}
-	\subsection*{Web User Interface}
-	\begin{itemize}
-		\item Must be implemented through Django.
-  		\item Students must be able to view their marks
-  		\item Must facilitate markers/students who don't use android enabled mobile devices.
-  		
-		\item \subsubsection*{Participant Login}
-		\begin{itemize}
-			\item Participants must enter their username and password.
-			\item Authorization through LDAP will determine if participant is a student or marker. 
-			\item Eligible students should be directly shown the view marks screen.
-			\item Eligible markers should be given an option to choose from the Record Marks function to the View Marks function.
-		\end{itemize}
-		
-		\item \subsubsection*{View Marks API}
-		\begin{itemize}
-			\item Participants must be shown a selection of all the modules they are enrolled for which use this system. 
-			\item Once a module has been selected by a student the participant acquired marks are shown to them.
-			\item Provide an export marks function for both .csv and .pdf files.
-		\end{itemize}
-		
-		\item \subsubsection*{Record Marks API}
-		\begin{itemize}
-			\item Marker is shown all the marking sessions he/she is enlisted for.
-			\item Once marker selects a marking session they can search a specific student by name/student number to which marks will be recorded for.
-			\item Altering marks works in a similar fashion.
-		\end{itemize}
-	\end{itemize}
-	\section*{Booking API}
-	Must interface with Computer Science website booking system.
-\subsection{Use-Cases}
-\section{External interface Requirements}
-\label{External interface Requirements}
+\section{Background}
+Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple need to be modified.
+It was also troublesome to generate reports for different platforms as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. And use the data to better improve on the already implemented schema.
+So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interface such as on conventional computers and mobile phones running android as well as on laptops and tablets.
+These clients with communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
 
 
-\subsection{User Interfaces}
-\label{User Interfaces}
+\section{Architecture requirements}
+\subsection{Access channel requirements}
+\subsection{Quality requirements}
+\subsection{Integration requirements}
+\subsection{Architecture constraint}
 
+\section{Functional Requirements}
+\subsection{Introduction}
+\subsection{Scope and Limitations}
+\subsection{Required functionality}
+\subsection{Use case prioritization}
+\subsection{Use case/Services contracts}
+\subsection{Process specifications}
+\subsection{Domain Objects}
 
-\subsubsection{Login Interface}
-\label{Login Interface}
-\begin{itemize}
-\item Users should be prompt to provide their student/personnel number and password on their interaction with the system.	
-\item The system will notify the user if the login information is invalid or navigate to the user's home page if the information is valid.
-\end{itemize}
-\subsubsection{Student interface}
-\label{Student interface}
-\begin{itemize}
-\item Students should be able to view a list of the subjects they are enrolled for. Each subject should link to all its activity marks page.
-\item Students should be able to export all their marks for a specific subject or all subjects.
-\end{itemize}
-\subsubsection{Teaching Assistance or Marker interface}
-\label{Teaching Assistance or Marker interface}
-
-\begin{itemize}
-\item Markers should be able to view the list of all the subjects they are responsible for.
-\item Markers should also be able to view all the sessions they are responsible for, along with their venues and times.
-\item Markers should also be able to view a list of students booked for that session.
-\item Marker should be able to view previous and current session marks, and they should be able to update those marks.
-\item Marker should be able to search for a student by providing name, surname, or student number.
-\end{itemize}
-
-\subsubsection{Lecture interface}
-\label{Lecture interface}
-
-\begin{itemize}
-\item The lecture should be able to view the list of all courses they are responsible for. Each course should link to an evaluation category page.
-\item The lecture should be able to provide mark rollup for each category or for a specific assessment.
-\item The lecture should be able to view or edit the marks of a student.
-\item The lecture should be able to search for a student by providing a name, surname, or student number.
-\item The lecture should be able to export marks.
-\item The lecture should be able to generate a report of changes made by markers to student marks.
-\end{itemize}
-
-\subsection{Hardware Interfaces}
-\label{Hardware Interfaces}
-The system is intended as a mobile application for the android platform and a web server, therefore it is supported on android powered devices and also on all devices with a web browser.
-\subsection{Software Interfaces}
-\label{Software Interfaces}
-
-The system is to be developed under the android operating system and via a web server using Django and Python as the server side implementation, SOAP API, and Android SDK for the mobile application.
-\begin{itemize}
-\item Outgoing data consist of semester marks, year marks, practical marks, assignment marks, project marks, and audit reports.
-\item Incoming data consist of mark updates, assignment flags, evaluation categories, mark rollup, number of assessments, student numbers for search purposes and names and surnames.
-
-\item communication between the user's phone or web browser and the server will occur when:
-
-\begin{itemize}
-\item A marker adds new student marks
-\item A marker updates student mark
-\item A lecture updates student marks
-\item A lecture specify a mark rollup for each category or each assessment
-\item A student view or export their marks
-\item A lecture or marker search for a student
-
-\end{itemize}
-\end{itemize}
-
-\subsection{Communication Interfaces}
-\label{Communication Interfaces}
-The system will have a network server which is web based and implemented using Django, Python, and SOAP API as an interface.
-The servers purpose is to allow requests and responses between itself and the database. 
-The system calls for the database system that stores students, lectures, teaching assistance, and courses information.
-All the requests from the devices are sent to the SOAP API and the API will send the responses back to the devices.
-
-\section{Technical/Non-functional requirements}
-
-                               \begin{itemize}
-                                                \item The system is vastly scalable and should be able to handle a moderate (respectively) amount of users, before the performance starts deteriorating.
-                                                \begin{itemize}
-                                                                \item The application uses a centralized MySQL database, and all the users across the different platforms will connect and communicate with it. 
-                                                                \item The approximation of the maximum number of users that MySQL can handle before performance seizes to be optimal is about 150,000 users, this is due to the fact that the application uses this centralized MySQL database, and based on the MySQL documents it can handle about that amount, performing roughly a maximum of 4,294,967,295 connections to the database. 
-                                                \end{itemize}
-                                \end{itemize}
-                \begin{itemize}
-                        \item The system provides resource management utilities that cater to the performance and reliability of the system. Examples of these are the following thread, object and connection pooling amongst others.
-                        \begin{itemize}
-                                \item Making the performance independent to the number of number of users.
-                        \end{itemize}
-                \end{itemize}
-                \begin{itemize}
-                        \item The system supports clustering and load balancing.
-                \end{itemize}
-                \begin{itemize}
-                        \item Connection to the Database is persistent, and connection can only be lost when the users decide to terminate the connection.\\
-                \end{itemize}
-
-\begin{center}\textbf{Authentication}\end{center}
-                \begin{itemize}
-                        \item The users have to have an account in order access the application; this will provide the users with a username and password. These associated pieces of information are important as they will be required for the authentication process i.e. logging.
-                        \begin{itemize}
-                                \item A user will have to provide his or her username as well as their associated password in order for them to be logged in and for a session to be created for them.
-                        \end{itemize}
-                \end{itemize}
-                \begin{itemize}
-                        \item The Session that is created when the user logs in with continues be checked for authentication throughout the time that the users is accessing the application. These checks could be done when the state of the application changes, when a request is sent or after a specified period of time.
-                        \begin{itemize}
-                                \item If the authentication fails at any point, then the user will be kicked out of the system and will be forced to try to log in again.
-                        \end{itemize}
-                \end{itemize}
-
-\begin{center}\textbf{Authorization}\end{center}
-                \begin{itemize}
-                        \item Authorization tokens will be assigned to each user, irrespective of the sort of account that they may hold.
-                        \begin{itemize}
-                                \item The tokens determine the user’s privileges.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item They also determine what the user is allowed to read  e.g view all the marks or just specific ones.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item They determine whether a user can modify marks, specific or any marks or fields at all.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item They determine whether a user can execute certain actions on the application.
-                        \end{itemize}
-                \end{itemize}
-                \begin{itemize}
-                        \item
-                        The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\\\\\begin{tabular}{|c|c|}\hline
-                        Tokens   & Privileges \\\hline
-                        n & Less privileges then level n-1\\\hline
-                        1 & Less privileges then level 0\\\hline
-                        0 & Most privileged\\\hline
-                \end{tabular}
-                \end{itemize}
-
-\begin{center}\textbf{Security}\end{center}
-                \begin{itemize}
-                        \item The passwords that are assigned are assigned to each user are encrypted using a sophisticated encryption algorithm called the “message-digest algorithm” otherwise known as md5.
-                        \begin{itemize}
-                                \item  This algorithm prevents people who have access to the control (database) from being able to view the actual password and associate it with the user name and thus seize control of a user’s account.
-                        \end{itemize}
-                        \end{itemize}
-
-                \begin{itemize}
-                        \item  When a user’s fails to provide the correct login parameters 3 times in a row, the user account is suspended for 10 minutes.
-                        \begin{itemize}
-                                \item  The idea is to try and prevent bots (computer programs that try all the possible password combinations) from accessing an account,  any users account.
-                        \end{itemize}
-                \end{itemize}
-
-\begin{center}\textbf{Audit-ability}\end{center}
-                \begin{itemize}
-                        \item  Once the users have successfully logged into the application, they have the ability to perform certain tasks depending on their assigned privilege tokens.
-                        \end{itemize}
-                \begin{itemize}
-                        \item The users activity is logged in detail so that they can be referred to later if need be. Some of the activates that are logged are as follows…
-
-                        \begin{itemize}
-                                \item Changes to fields or rows in the database.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item Updates to fields or rows in the database.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item Additions to any aspect of the database.
-                        \end{itemize}
-                        \begin{itemize}
-                                \item The execution of activities that directly or indirectly affect the database or another user.
-                        \end{itemize}
-                \end{itemize}						
-                                                
-\begin{center}\textbf{Technical requirements}\end{center}
-
-        \begin{itemize}
-                \item Database technology: MySQL
-        \end{itemize}
-                \begin{itemize}
-                        \item • It must run using HTTPS requests and response events to connect to the database.
-                \end{itemize}
-                \begin{itemize}
-                        \item Authentication: LDAP (LOGIN)                 
-                                \end{itemize}
-                \begin{itemize}
-                        \item Importable Data Format: CSV
-                \end{itemize}
-                \begin{itemize}
-                        \item Exportable Data Format: CSV
-                \end{itemize}
-                \begin{itemize}
-                        \item Interface: SOAD
-                \end{itemize}
-                \begin{itemize}
-                        \item Server communication: Django
-                \end{itemize}
-                \begin{itemize}
-                        \item Security/Authentication: LDAP
-                \end{itemize}
-                \begin{itemize}
-                        \item Text encoding: UTF-8
-                \end{itemize}
-                \begin{itemize}
-                        \item Client interface platforms
-                                                        \begin{itemize}
-                                                                \item Android
-                                                                \item Web browser
-                                                                \item Cross Compatible OS support for Linux, Mac OS X and Windows
-                                                                \item Any sensitive information stored must be stored in encrypted format.
-                                                        \end{itemize}                                           
-                \end{itemize}                                           
-
-
-\section{Open issues}
-Add open issues here
+\section{Open Issues}
 \section{Glossary}
-Add glossary text here
 \end{document}
