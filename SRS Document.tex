@@ -179,7 +179,9 @@ So with this in mind, a centralized schema is designed where multiple clients ca
 
 \begin{center}\textbf{Availability}\end{center}           
         \begin{itemize}
-                \item online vs offline db connect
+                \item Online vs offline db connect
+                \item Local database must be utilized when mobile interface is offline.
+                \item Local database must synchronise with server once it is online.
         \end{itemize}   
                                                       
 \begin{center}\textbf{Flexibility}\end{center}           
@@ -187,7 +189,11 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                 \item Different layers containing system functions – easy to add functions
         \end{itemize}   
 
-
+\begin{center}\textbf{Performance}\end{center}           
+        \begin{itemize}
+                \item System should respond in timely fashion allowing markers to work at the quickest pace possible.
+        \end{itemize}  
+ 
 \subsection{Integration requirements}
 	\section*{LDAP}
     \begin{itemize}
