@@ -41,21 +41,13 @@ So with this in mind, a centralized schema is designed where multiple clients ca
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
-	\section*{Mark API}
-	\begin{itemize}
-		\item Must interface with CS website login details.
-		\item Must use Soap interface through out all applications.
-		\item Must Facilitate marking sessions.
-		\item Marking sessions must coincide with practical sessions.
-		\item Marking session durations must also be personalizable by the client.
-		\item Marker(s) must be able to record marks during marking sessions.
-		\item Marks must be stored in a database.
-		\item Database must be exportable to a .csv file.
-		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
-		\item Unlocked databases must allow marker(s) to alter marks.
-		\item Altered marks must include reason for alteration.
-		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
-	\end{itemize}
+	
+The main channels of access to the system will appear in two forms:
+\begin{itemize}
+\item Through an android mobile application.
+\item Through a web interface.
+\end{itemize}
+	
 	\subsection*{Android User Interface}
 	\begin{itemize}
 		\item Marker(s) must be able to select a marking session(s).
@@ -71,11 +63,13 @@ So with this in mind, a centralized schema is designed where multiple clients ca
 			\item Eligible markers should be given an option to choose from the Record Marks function to the View Marks function.
 		\end{itemize}
 		
+		
 		\item \subsubsection*{View Marks API}
 		\begin{itemize}
 			\item Participants must be shown a selection of all the modules they are enrolled for which use this system. 
 			\item Once a module has been selected by a student the participant acquired marks are shown to them.
 		\end{itemize}
+		
 		
 		\item \subsubsection*{Record Marks API}
 		\begin{itemize}
@@ -112,12 +106,29 @@ So with this in mind, a centralized schema is designed where multiple clients ca
 			\item Altering marks works in a similar fashion.
 		\end{itemize}
 	\end{itemize}
+	
+	\section*{Mark API}
+	\begin{itemize}
+		\item Must interface with CS website login details.
+		\item Must use Soap interface through out all applications.
+		\item Must Facilitate marking sessions.
+		\item Marking sessions must coincide with practical sessions.
+		\item Marking session durations must also be personalizable by the client.
+		\item Marker(s) must be able to record marks during marking sessions.
+		\item Marks must be stored in a database.
+		\item Database must be exportable to a .csv file.
+		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
+		\item Unlocked databases must allow marker(s) to alter marks.
+		\item Altered marks must include reason for alteration.
+		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
+	\end{itemize}
+		
 	\section*{Booking API}
 	Must interface with Computer Science website booking system.
 	
 	
 \subsection{Quality requirements}
-
+\begin{center}\textbf{Scalability}\end{center}
                                \begin{itemize}
                                                 \item The system is vastly scalable and should be able to handle a moderate (respectively) amount of users, before the performance starts deteriorating.
                                                 \begin{itemize}
@@ -213,14 +224,33 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                                 \item The execution of activities that directly or indirectly affect the database or another user.
                         \end{itemize}
                 \end{itemize}						
-                                                
-\begin{center}\textbf{Technical requirements}\end{center}
-
+                         
+\begin{center}\textbf{Reliability}\end{center}           
         \begin{itemize}
+                \item persist db CRUDs
+        \end{itemize}   
+
+\begin{center}\textbf{Availability}\end{center}           
+        \begin{itemize}
+                \item online vs offline db connect
+        \end{itemize}   
+                                                      
+\begin{center}\textbf{Flexibility}\end{center}           
+        \begin{itemize}
+                \item Different layers containing system functions – easy to add functions
+        \end{itemize}   
+
+
+\subsection{Integration requirements}
+
+ 
+                
+\subsection{Architecture constraint}
+       \begin{itemize}
                 \item Database technology: MySQL
         \end{itemize}
                 \begin{itemize}
-                        \item • It must run using HTTPS requests and response events to connect to the database.
+                        \item  It must run using HTTPS requests and response events to connect to the database.
                 \end{itemize}
                 \begin{itemize}
                         \item Authentication: LDAP (LOGIN)                 
@@ -232,7 +262,7 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                         \item Exportable Data Format: CSV
                 \end{itemize}
                 \begin{itemize}
-                        \item Interface: SOAD
+                        \item Interface: SOAP
                 \end{itemize}
                 \begin{itemize}
                         \item Server communication: Django
@@ -252,14 +282,15 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                                                                 \item Any sensitive information stored must be stored in encrypted format.
                                                         \end{itemize}                                           
                 \end{itemize}                                           
-
-
-
-\subsection{Integration requirements}
-\subsection{Architecture constraint}
-
+                
 \section{Functional Requirements}
 \subsection{Introduction}
+The system we must develop is a marking system, where marks of practical’s, assignments and tests will be collected and saved. There will be two main interfaces, an android application and a website. Both interfaces will have the same functionality and will be storing and retrieval of data from the same source.\\\\
+There will be password protection for each user and each user must login before using nay functionality.\\\\
+The systems main purpose will be to capture mark, but there will be a lot more functionality. Like most actions on the system will be audited, there will also be reports that can be extracted and students will be able to view their own marks.\\\\
+The interfaces will be user friendly and marks captured will be save real time to the database. Each marker will be able to use the system to see the time and place of their sessions and get the mark sheet for the session.\\\\
+The reports will consist of various designs that consist of graphs and various functionalities. The lectures can also change marks and set up practicals, assignment and test in any format they choose. All the marks of the practicals, assignments and test can be rolled up, like for example a semester mark. Students will only be able to query their own marks on the system. 
+
 \subsection{Scope and Limitations}
 \subsection{Required functionality}
 \subsection{Use case prioritization}
