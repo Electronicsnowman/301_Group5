@@ -107,24 +107,6 @@ The main channels of access to the system will appear in two forms:
 		\end{itemize}
 	\end{itemize}
 	
-	\section*{Mark API}
-	\begin{itemize}
-		\item Must interface with CS website login details.
-		\item Must use Soap interface through out all applications.
-		\item Must Facilitate marking sessions.
-		\item Marking sessions must coincide with practical sessions.
-		\item Marking session durations must also be personalizable by the client.
-		\item Marker(s) must be able to record marks during marking sessions.
-		\item Marks must be stored in a database.
-		\item Database must be exportable to a .csv file.
-		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
-		\item Unlocked databases must allow marker(s) to alter marks.
-		\item Altered marks must include reason for alteration.
-		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
-	\end{itemize}
-		
-	\section*{Booking API}
-	Must interface with Computer Science website booking system.
 	
 	
 \subsection{Quality requirements}
@@ -242,8 +224,40 @@ The main channels of access to the system will appear in two forms:
 
 
 \subsection{Integration requirements}
+	\section*{LDAP}
+    \begin{itemize}
+                \item The system is used for the authentication requirements of the application.\\This ranges from user login authentication to the permission based token assignment.
+    \end{itemize}
+    
+	\section*{SOAP}
+    \begin{itemize}
+                \item This protocol does the communication within the network. It achieves this by accepting request and sending responses to and from different interfaces and processing them accordingly.\\e.g.Receiving a request to view marks from an android application interface and passing the request to the database, then returning the result.  
+    \end{itemize}   
+    
+	\section*{ADOBE API}
+    \begin{itemize}
+                \item This API is used when generating a report. The result is then presented as a PDF using the fore mentioned API. 
+    \end{itemize}   
 
- 
+
+	\section*{Mark API}
+	\begin{itemize}
+		\item Must interface with CS website login details.
+		\item Must use Soap interface through out all applications.
+		\item Must Facilitate marking sessions.
+		\item Marking sessions must coincide with practical sessions.
+		\item Marking session durations must also be personalizable by the client.
+		\item Marker(s) must be able to record marks during marking sessions.
+		\item Marks must be stored in a database.
+		\item Database must be exportable to a .csv file.
+		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
+		\item Unlocked databases must allow marker(s) to alter marks.
+		\item Altered marks must include reason for alteration.
+		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
+	\end{itemize}
+		
+	\section*{Booking API}
+	Must interface with Computer Science website booking system. 
                 
 \subsection{Architecture constraint}
        \begin{itemize}
