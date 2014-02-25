@@ -34,80 +34,45 @@ These tools will be available in a web based interface as well as an Android int
 The vision of the project is to create multiple interface, for use by multiple user levels, that communicate with a centralized database to record mark results, audit, manage, manipulate, modify and report results based on these results into a pdf or csv format.\linebreak The system will be vastly scalable and allow multiple users to interface with the application at the same time. It will provide resource management utilities that will cater to the performance and reliability. Thus the client’s actions will be correctly reflected on the system.
 
 \section{Background}
-Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple need to be modified.\linebreak
+Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple recordings need to be modified. Crucial information seemed to get lost along the way, and needed to be addressed.\linebreak
 It was also troublesome to generate reports for different platforms as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. And use the data to better improve on the already implemented schema.\linebreak
-So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interface such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients with communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
+So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interfaces such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients who must communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
 
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
-	
-The main channels of access to the system will appear in two forms:
-\begin{itemize}
-\item Through an android mobile application.
-\item Through a web interface.
-\end{itemize}
-	
-	\subsection*{Android User Interface}
-	\begin{itemize}
-		\item Marker(s) must be able to select a marking session(s).
-		\item Student(s) must be able to check acquired marks.
-		\item Marks recorded by marker must be stored on local database.
-		\item Local database must synchronize with server database.
-	
-		\item \subsubsection*{Participant Login}
-		\begin{itemize}
-			\item Participants must enter their username and password.
-			\item Authorization will determine if participant is a student or marker. 
-			\item Eligible students should be directly shown the view marks screen.
-			\item Eligible markers should be given an option to choose from the Record Marks function to the View Marks function.
-		\end{itemize}
-		
-		
-		\item \subsubsection*{View Marks API}
-		\begin{itemize}
-			\item Participants must be shown a selection of all the modules they are enrolled for which use this system. 
-			\item Once a module has been selected by a student the participant acquired marks are shown to them.
-		\end{itemize}
-		
-		
-		\item \subsubsection*{Record Marks API}
-		\begin{itemize}
-			\item Marker is shown all the marking sessions he/she is enlisted for.
-			\item Once marker selects a marking session they can search a specific student by name/student number to which marks will be recorded for.
-			\item Altering marks works in a similar fashion.
-		\end{itemize}
-	\end{itemize}
-	\subsection*{Web User Interface}
-	\begin{itemize}
-		\item Must be implemented through Django.
-  		\item Students must be able to view their marks
-  		\item Must facilitate markers/students who don't use android enabled mobile devices.
-  		
-		\item \subsubsection*{Participant Login}
-		\begin{itemize}
-			\item Participants must enter their username and password.
-			\item Authorization through LDAP will determine if participant is a student or marker. 
-			\item Eligible students should be directly shown the view marks screen.
-			\item Eligible markers should be given an option to choose from the Record Marks function to the View Marks function.
-		\end{itemize}
-		
-		\item \subsubsection*{View Marks API}
-		\begin{itemize}
-			\item Participants must be shown a selection of all the modules they are enrolled for which use this system. 
-			\item Once a module has been selected by a student the participant acquired marks are shown to them.
-			\item Provide an export marks function for both .csv and .pdf files.
-		\end{itemize}
-		
-		\item \subsubsection*{Record Marks API}
-		\begin{itemize}
-			\item Marker is shown all the marking sessions he/she is enlisted for.
-			\item Once marker selects a marking session they can search a specific student by name/student number to which marks will be recorded for.
-			\item Altering marks works in a similar fashion.
-		\end{itemize}
-	\end{itemize}
-	
-	
+\begin{center}\textbf{Browser Clients}\end{center}
+	  \begin{itemize}
+                                                \item The browser clients that would be able to access the application from different platforms are as follows...
+                                                \begin{itemize}
+                                                                \item Google Chrome, FireFox Mozilla, Internet Explorer and Safari web browsers that run on conventional computers as well as tablets and mobile phones
+
+\item Because this access channel is architecture independent, it is cross platform.                                                               
+
+
+                                                \end{itemize}
+                                \end{itemize}
+                                
+\begin{center}\textbf{Application Application client}\end{center}
+	  \begin{itemize}
+                                                \item The Android clients that would be able to access the application from different platforms are as follows...
+                                                \begin{itemize}
+                                                                \item Any device that runs Android can use the application.
+                                                               
+
+
+                                                \end{itemize}
+                                \end{itemize}                                
+                                
+\begin{center}\textbf{SOAP}\end{center}
+	  \begin{itemize}
+                                                \item The access channel is the segment that does network communication with the database and pass requests to it, as well as accept responses from it.
+                                \end{itemize}                                                                
+                                
+\begin{center}\textbf{Database}\end{center}
+	  \begin{itemize}
+                                                \item The database that is used for data storage, management,manipulation etc.
+                                \end{itemize}                                                                                                
 	
 \subsection{Quality requirements}
 \begin{center}\textbf{Scalability}\end{center}
@@ -260,6 +225,9 @@ The main channels of access to the system will appear in two forms:
 	Must interface with Computer Science website booking system. 
                 
 \subsection{Architecture constraint}
+       \begin{itemize}
+                \item Architecture: Waterfall Architecture 
+        \end{itemize}
        \begin{itemize}
                 \item Database technology: MySQL
         \end{itemize}
