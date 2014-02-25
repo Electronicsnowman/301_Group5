@@ -31,12 +31,12 @@ This project ,when finalized, should act as a holistic marks management system. 
 These tools will be available in a web based interface as well as an Android interface.
 
 \section{Vision}
-The vision of the project is to create multiple interfaces that communicate with a centralized database to record mark results, audit, manage, manipulate, modify and report results based on these results into a pdf or csv format.\\\\The system will be vastly scalable and allow multiple users to interface with the application at the same time. It will provide resource management utilities that will cater to the performance and reliability. Thus the client’s actions will be correctly reflected on the system.
+The vision of the project is to create multiple interfaces that communicate with a centralized database to record mark results, audit, manage, manipulate, modify and report results based on these results into a pdf or csv format.\linebreak The system will be vastly scalable and allow multiple users to interface with the application at the same time. It will provide resource management utilities that will cater to the performance and reliability. Thus the client’s actions will be correctly reflected on the system.
 
 \section{Background}
-Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple need to be modified.\\\\
-It was also troublesome to generate reports for different platforms as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. And use the data to better improve on the already implemented schema.\\\\
-So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interface such as on conventional computers and mobile phones running android as well as on laptops and tablets.\\\\These clients with communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
+Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple need to be modified.\linebreak
+It was also troublesome to generate reports for different platforms as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. And use the data to better improve on the already implemented schema.\linebreak
+So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interface such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients with communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
 
 
 \section{Architecture requirements}
@@ -107,24 +107,6 @@ The main channels of access to the system will appear in two forms:
 		\end{itemize}
 	\end{itemize}
 	
-	\section*{Mark API}
-	\begin{itemize}
-		\item Must interface with CS website login details.
-		\item Must use Soap interface through out all applications.
-		\item Must Facilitate marking sessions.
-		\item Marking sessions must coincide with practical sessions.
-		\item Marking session durations must also be personalizable by the client.
-		\item Marker(s) must be able to record marks during marking sessions.
-		\item Marks must be stored in a database.
-		\item Database must be exportable to a .csv file.
-		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
-		\item Unlocked databases must allow marker(s) to alter marks.
-		\item Altered marks must include reason for alteration.
-		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
-	\end{itemize}
-		
-	\section*{Booking API}
-	Must interface with Computer Science website booking system.
 	
 	
 \subsection{Quality requirements}
@@ -181,7 +163,7 @@ The main channels of access to the system will appear in two forms:
                 \end{itemize}
                 \begin{itemize}
                         \item
-                        The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\\\\\begin{tabular}{|c|c|}\hline
+                        The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\linebreak\begin{tabular}{|c|c|}\hline
                         Tokens   & Privileges \\\hline
                         n & Less privileges then level n-1\\\hline
                         1 & Less privileges then level 0\\\hline
@@ -242,8 +224,40 @@ The main channels of access to the system will appear in two forms:
 
 
 \subsection{Integration requirements}
+	\section*{LDAP}
+    \begin{itemize}
+                \item The system is used for the authentication requirements of the application.\\This ranges from user login authentication to the permission based token assignment.
+    \end{itemize}
+    
+	\section*{SOAP}
+    \begin{itemize}
+                \item This protocol does the communication within the network. It achieves this by accepting request and sending responses to and from different interfaces and processing them accordingly.\\e.g.Receiving a request to view marks from an android application interface and passing the request to the database, then returning the result.  
+    \end{itemize}   
+    
+	\section*{ADOBE API}
+    \begin{itemize}
+                \item This API is used when generating a report. The result is then presented as a PDF using the fore mentioned API. 
+    \end{itemize}   
 
- 
+
+	\section*{Mark API}
+	\begin{itemize}
+		\item Must interface with CS website login details.
+		\item Must use Soap interface through out all applications.
+		\item Must Facilitate marking sessions.
+		\item Marking sessions must coincide with practical sessions.
+		\item Marking session durations must also be personalizable by the client.
+		\item Marker(s) must be able to record marks during marking sessions.
+		\item Marks must be stored in a database.
+		\item Database must be exportable to a .csv file.
+		\item Database must have lock/unlock capabilities that are also automated depending on whether are marking session is currently happening.
+		\item Unlocked databases must allow marker(s) to alter marks.
+		\item Altered marks must include reason for alteration.
+		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
+	\end{itemize}
+		
+	\section*{Booking API}
+	Must interface with Computer Science website booking system. 
                 
 \subsection{Architecture constraint}
        \begin{itemize}
@@ -285,10 +299,10 @@ The main channels of access to the system will appear in two forms:
                 
 \section{Functional Requirements}
 \subsection{Introduction}
-The system we must develop is a marking system, where marks of practical’s, assignments and tests will be collected and saved. There will be two main interfaces, an android application and a website. Both interfaces will have the same functionality and will be storing and retrieval of data from the same source.\\\\
-There will be password protection for each user and each user must login before using nay functionality.\\\\
-The systems main purpose will be to capture mark, but there will be a lot more functionality. Like most actions on the system will be audited, there will also be reports that can be extracted and students will be able to view their own marks.\\\\
-The interfaces will be user friendly and marks captured will be save real time to the database. Each marker will be able to use the system to see the time and place of their sessions and get the mark sheet for the session.\\\\ 
+The system we must develop is a marking system, where marks of practical’s, assignments and tests will be collected and saved. There will be two main interfaces, an android application and a website. Both interfaces will have the same functionality and will be storing and retrieval of data from the same source.\linebreak
+There will be password protection for each user and each user must login before using nay functionality.\linebreak
+The systems main purpose will be to capture mark, but there will be a lot more functionality. Like most actions on the system will be audited, there will also be reports that can be extracted and students will be able to view their own marks.\linebreak
+The interfaces will be user friendly and marks captured will be save real time to the database. Each marker will be able to use the system to see the time and place of their sessions and get the mark sheet for the session.\linebreak 
 The reports will consist of various designs that consist of graphs and various functionalities. The lectures can also change marks and set up practicals, assignment and test in any format they choose. All the marks of the practicals, assignments and test can be rolled up, like for example a semester mark. Students will only be able to query their own marks on the system. 
 
 \subsection{Scope and Limitations}
