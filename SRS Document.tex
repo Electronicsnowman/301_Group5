@@ -12,23 +12,13 @@
 \section{Introduction}
 
 \subsection{Purpose}
-The purpose of this document is to form a legally binding common ground between the stakeholders and the developers. This document will stipulate the functional as well as non-functional requirements of a system that will allow various contributors to collect, navigate and manipulate the marks of students studying at the university of Pretoria, as well as allow the students to view their marks.
+The purpose of this document is to form a legally binding common ground between Jan Kroeze and the developers. This document will stipulate the functional as well as non-functional requirements of a system that will allow various contributors to collect, navigate and manipulate the marks of students studying at the university of Pretoria, as well as allow the students to view their marks.
 
 \subsection{Document conventions}
 \begin{description}
 \item Documentation formulation: LaTeX
-\item Unified modelling language: version 2.0
+\item Unified Modelling Language: version 2.0
 \end{description}
-
-\subsection{Project cope}
-This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
-\begin{enumerate}
-\item Level 0. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
-\item Level 1 users (such as Students) should be able to view their own marks.
-\item Level 2 users (such as Teaching Assistants and Tutors) will be able to view any students marks that are in a session that the level 2 person is assigned to. This level will also give access to adding as well as modifying marks.
-\item Level 3 users (such as lecturers) will be able to configure mark roll-ups, add assessment opportunities and draw reports from all of the marks of the subjects of which he is assigned to. This level will also have all of the privileges of level 1 as well as level 2 users.
-\end{enumerate}
-These tools will be available in a web based interface as well as an Android interface.
 
 \section{Vision}
 The vision of the project is to create multiple interfaces, for use by multiple user levels, that communicate with a centralized database to perform recording, auditing, managing, manipulating, modifying and reporting tasks on mark results. A PDF or csv format document will then be attainable from these results.\linebreak The system will be scalable and therefore allow multiple users to interface with the it at the same time. It will provide resource management utilities that will cater to the performance and reliability demands, ensuring the clients actions will be correctly reflected on the system.
@@ -120,7 +110,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
                         \item
                         The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\linebreak\begin{tabular}{|c|c|}\hline
                         Tokens   & Privileges \\\hline
-                        n & More privileges then level n-1, n \textgreater  1\\\hline
+                        n & More privileges then level n+1\\\hline
                         1 & Less privileges then level 0\\\hline
                         0 & Most privileged\\\hline
                 \end{tabular}
@@ -270,6 +260,14 @@ The interfaces will be user friendly and marks captured will be save real time t
 The reports will consist of various designs that consist of graphs and various functionalities. The lectures can also change marks and set up practicals, assignment and test in any format they choose. All the marks of the practicals, assignments and test can be rolled up, like for example a semester mark. Students will only be able to query their own marks on the system. 
 
 \subsection{Scope and Limitations}
+This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
+\begin{enumerate}
+\item Level 0. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
+\item Level 1 users (such as Students) should be able to view their own marks.
+\item Level 2 users (such as Teaching Assistants and Tutors) will be able to view any students marks that are in a session that the level 2 person is assigned to. This level will also give access to adding as well as modifying marks.
+\item Level 3 users (such as lecturers) will be able to configure mark roll-ups, add assessment opportunities and draw reports from all of the marks of the subjects of which he is assigned to. This level will also have all of the privileges of level 1 as well as level 2 users.
+\end{enumerate}
+These tools will be available in a web based interface as well as an Android interface.
 \subsection{Required functionality}
 \subsection{Use case prioritization}
 \subsection{Use case/Services contracts}
