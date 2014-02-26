@@ -28,10 +28,10 @@ Lecturers, Tutors and Teaching assistants often find that recording and evaluati
 It was also a cumbersome task to generate reports for different needs as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. \linebreak
 With this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interfaces such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients must communicate over a protected (encrypted) and synchronized framework to enable efficient, effective and secure transactions. 
 
-
+\pagebreak
 \section{Architecture requirements}
 \subsection{Access channel requirements}
-\begin{center}\textbf{Browser Clients}\end{center}
+\indent\indent \textbf{Browser Clients}
 \begin{itemize}
 \item The browser clients that would be able to access the application from different platforms are as follows...
 \begin{itemize}
@@ -175,23 +175,23 @@ With this in mind, a centralized schema is designed where multiple clients can p
         \end{itemize}  
  
 \subsection{Integration requirements}
-	\section*{LDAP}
+	\textbf{LDAP}
     \begin{itemize}
                 \item The system is used for the authentication requirements of the application.\\This ranges from user login authentication to the permission based token assignment.
     \end{itemize}
     
-	\section*{SOAP}
+	\textbf{SOAP}
     \begin{itemize}
                 \item This protocol does the communication within the network. It achieves this by accepting request and sending responses to and from different interfaces and processing them accordingly.\\e.g.Receiving a request to view marks from an android application interface and passing the request to the database, then returning the result.  
     \end{itemize}   
     
-	\section*{ADOBE API}
+	\textbf{ADOBE API}
     \begin{itemize}
                 \item This API is used when generating a report. The result is then presented as a PDF using the fore mentioned API. 
     \end{itemize}   
 
 
-	\section*{Mark API}
+	\textbf{Mark API}
 	\begin{itemize}
 		\item Must interface with CS website login details.
 		\item Must use Soap interface through out all applications.
@@ -207,7 +207,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
 		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
 	\end{itemize}
 		
-	\section*{Booking API}
+	\textbf{Booking API}
 	Must interface with Computer Science website booking system. 
                 
 \subsection{Architecture constraint}
@@ -253,19 +253,6 @@ With this in mind, a centralized schema is designed where multiple clients can p
                 
 \section{Functional Requirements}
 \subsection{Introduction}
-The system we must develop is a marking system, where marks of practicals, assignments and tests will be collected and saved. There will be two interfaces, an android application and a website. Both interfaces will have the same functionality and will be storing and retrieving data from the same source. There will be password protection for each user and each user must login before using any functionality.
-\linebreak
-\linebreak
-The systems main purpose will be to capture marks. There will also be a lot more functionality, like most actions on the system will be audited, there will also be reports that can be extracted and students will be able to view their own marks.
-\linebreak
-\linebreak
-The interfaces will be user friendly and marks captured will be save real time to the database. Each marker will be able to use the system to see the time and location of their sessions and get the mark sheet for the session. 
-\linebreak
-\linebreak
-The reports will consist of various designs that consist of graphs and various functionalities. The lectures can also change marks and set up practicals, assignment and test in any format they choose. All the marks of the practicals, assignments and test can be rolled up, like for example a semester mark. Students will only be able to query their own marks on the system. 
-
-
-\subsection{Scope and Limitations}
 This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
 \begin{enumerate}
 \item Level 0. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
@@ -274,6 +261,10 @@ This project ,when finalized, should act as a holistic marks management system. 
 \item Level 3 users (such as lecturers) will be able to configure mark roll-ups, add assessment opportunities and draw reports from all of the marks of the subjects of which he is assigned to. This level will also have all of the privileges of level 1 as well as level 2 users.
 \end{enumerate}
 These tools will be available in a web based interface as well as an Android interface.
+
+
+\subsection{Scope and Limitations}
+
 \subsection{Required functionality}
 \subsection{Use case prioritization}
 \subsection{Use case/Services contracts}
