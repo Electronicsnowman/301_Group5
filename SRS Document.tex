@@ -40,23 +40,23 @@ With this in mind, a centralized schema is designed where multiple clients can p
 \item Because this access channel is architecture independent, it is cross platform.                                                               
 \end{itemize}
 \end{itemize}
-\begin{center}\textbf{Application client}\end{center}
+\indent\indent \textbf{Application client}
 \begin{itemize}
 \item The Android clients that would be able to access the application are as follows...
 \begin{itemize}
 \item Any device that runs Android can use the application.
 \end{itemize}
 \end{itemize}                                
-\begin{center}\textbf{SOAP}\end{center}
+\indent\indent \textbf{SOAP}
 \begin{itemize}
 \item This is the access channel segment that handles network communication with the database and passes requests to it, as well as accept responses from it.
 \end{itemize}                                                                
-\begin{center}\textbf{Database}\end{center}
+\indent\indent\textbf{Database}
 \begin{itemize}
 \item The database that is used for data storage, management, manipulation will be instantiated using MySQL.
 \end{itemize}                                                                                                
 \subsection{Quality requirements}
-\begin{center}\textbf{Scalability}\end{center}
+\indent\indent\textbf{Scalability}
                                \begin{itemize}
                                                 \item The system is vastly scalable and should be able to handle a moderately large amount of users, before the performance starts deteriorating.
                                                 \begin{itemize}
@@ -77,7 +77,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
                         \item Connection to the Database is persistent, and connection can only be lost when the users decide to terminate the connection.\\
                 \end{itemize}
 
-\begin{center}\textbf{Authentication}\end{center}
+\indent\textbf{Authentication}
                 \begin{itemize}
                         \item The users have to have an account in order access the application; this will provide the users with a username and password. These associated pieces of information are important as they will be required for the authentication process i.e. logging.
                         \begin{itemize}
@@ -91,7 +91,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
                         \end{itemize}
                 \end{itemize}
 
-\begin{center}\textbf{Authorization}\end{center}
+\indent\textbf{Authorization}
                 \begin{itemize}
                         \item Authorization tokens will be assigned to each user, irrespective of the sort of account that they may hold.
                         \begin{itemize}
@@ -109,15 +109,19 @@ With this in mind, a centralized schema is designed where multiple clients can p
                 \end{itemize}
                 \begin{itemize}
                         \item
-                        The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\linebreak\begin{tabular}{|c|c|}\hline
+                        The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\linebreak\linebreak \begin{center}
+                        
+                        
+                        \begin{tabular}{|c|c|}\hline
                         Tokens   & Privileges \\\hline
                         n & More privileges then level n+1\\\hline
                         1 & Less privileges then level 0\\\hline
                         0 & Most privileged\\\hline
                 \end{tabular}
+                \end{center}
                 \end{itemize}
-
-\begin{center}\textbf{Security}\end{center}
+\pagebreak
+\indent\indent\textbf{Security}
                 \begin{itemize}
                         \item The passwords that are assigned are assigned to each user are encrypted using a sophisticated encryption algorithm called the “message-digest algorithm” otherwise known as md5.
                         \begin{itemize}
@@ -132,7 +136,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
                         \end{itemize}
                 \end{itemize}
 
-\begin{center}\textbf{Audit-ability}\end{center}
+\indent\textbf{Audit-ability}
                 \begin{itemize}
                         \item  Once the users have successfully logged into the application, they have the ability to perform certain tasks depending on their assigned privilege tokens.
                         \end{itemize}
@@ -153,7 +157,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
                         \end{itemize}
                 \end{itemize}						
                          
-\begin{center}\textbf{Reliability}\end{center}           
+\indent\textbf{Reliability}         
           
 	\begin{itemize}
 		\item There will be easy and fast access to the database.
@@ -162,7 +166,8 @@ With this in mind, a centralized schema is designed where multiple clients can p
 		\item Errors will be handled and the system will show enough information about the errors.
 		\item In a situation when a database crashed. There will be a backup database used to recover within a reasonable time.
 	\end{itemize}
-\begin{center}\textbf{Availability}\end{center}           
+	\pagebreak
+\indent\indent\textbf{Availability}       
         \begin{itemize}
                 \item Online vs offline db connect
                 \item Local database must be utilized when mobile interface is offline.
@@ -175,7 +180,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
 	 
         \end{itemize}   
                                                       
-\begin{center}\textbf{Flexibility}\end{center}           
+\indent\textbf{Flexibility}         
         \begin{itemize}
                 \item The system will use SOAP based services, where changes to some of the parts of the service will not affect the design and some functionality of the system.
 		\item The system allows integration with other systems.
@@ -183,13 +188,13 @@ With this in mind, a centralized schema is designed where multiple clients can p
 		\item Object Oriented Programming will be used to allow changes to some parts of the code(program). Those changes will not affect other objects. Reason for this would be to allow the system's design and implementations to be reusable for upgrading the system later on for new platforms.
         \end{itemize}   
 
-\begin{center}\textbf{Performance}\end{center}           
+\indent\textbf{Performance}         
         \begin{itemize}
                 \item System should respond in timely fashion allowing markers to work at the quickest pace possible.
         \end{itemize}  
  
 \subsection{Integration requirements}
-	\textbf{LDAP}
+	\indent\indent\textbf{LDAP}
     \begin{itemize}
                 \item The system is used for the authentication requirements of the application.\\This ranges from user login authentication to the permission based token assignment.
     \end{itemize}
@@ -221,8 +226,8 @@ With this in mind, a centralized schema is designed where multiple clients can p
 		\item Marker(s) must be able to alter marks from previous marking session only with the permission/knowledge of the client.
 	\end{itemize}
 		
-	\textbf{Booking API}
-	Must interface with Computer Science website booking system. 
+	\textbf{Booking API} \newline
+	\indent Must interface with Computer Science website booking system. 
                 
 \subsection{Architecture constraint}
        \begin{itemize}
