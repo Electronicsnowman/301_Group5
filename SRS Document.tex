@@ -153,20 +153,33 @@ With this in mind, a centralized schema is designed where multiple clients can p
                 \end{itemize}						
                          
 \begin{center}\textbf{Reliability}\end{center}           
-        \begin{itemize}
-                \item persist db CRUDs
-        \end{itemize}   
-
+          
+	\begin{itemize}
+		\item There will be easy and fast access to the database.
+		\item The system will save made changes if the system crashed while the user was working
+		\item Users can still resume their sessions, if the device closed the application for some reason (e.g battery died).
+		\item Errors will be handled and the system will show enough information about the errors.
+		\item In a situation when a database crashed. There will be a backup database used to recover within a reasonable time.
+	\end{itemize}
 \begin{center}\textbf{Availability}\end{center}           
         \begin{itemize}
                 \item Online vs offline db connect
                 \item Local database must be utilized when mobile interface is offline.
                 \item Local database must synchronise with server once it is online.
+                
+		\item The system will be available in different platforms. Users can either access the system using mobile devices or by using any device with a web browser.
+		\item The system can also be accessed anytime and anywhere.
+		\item Inputs will be validated to prevent errors, before the execution of any input command.
+		\item If the server is done, the services or requests can be redirected to the backup server.
+	 
         \end{itemize}   
                                                       
 \begin{center}\textbf{Flexibility}\end{center}           
         \begin{itemize}
-                \item Different layers containing system functions – easy to add functions
+                \item The system will use SOAP based services, where changes to some of the parts of the service will not affect the design and some functionality of the system.
+		\item The system allows integration with other systems.
+		\item The system will take into account if the user loses internet connection or for whatever reason they cannot establish a connection to the server. The user can still be able to use the application but any transaction done while the system is disconnected will be cached until the connection is restored.
+		\item Object Oriented Programming will be used to allow changes to some parts of the code(program). Those changes will not affect other objects. Reason for this would be to allow the system's design and implementations to be reusable for upgrading the system later on for new platforms.
         \end{itemize}   
 
 \begin{center}\textbf{Performance}\end{center}           
