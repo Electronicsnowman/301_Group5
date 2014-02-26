@@ -17,74 +17,64 @@ The purpose of this document is to form a legally binding common ground between 
 \subsection{Document conventions}
 \begin{description}
 \item Documentation formulation: LaTeX
-\item Entity Relationship Diagram Notation: Crows Foot 
+\item Unified modelling language: version 2.0
 \end{description}
 
 \subsection{Project cope}
 This project ,when finalized, should act as a holistic marks management system. The system will have different privilege levels, when assigned to a level , users will have a restricted set of tools stipulated as follows: 
 \begin{enumerate}
+\item Level 0. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
 \item Level 1 users (such as Students) should be able to view their own marks.
 \item Level 2 users (such as Teaching Assistants and Tutors) will be able to view any students marks that are in a session that the level 2 person is assigned to. This level will also give access to adding as well as modifying marks.
 \item Level 3 users (such as lecturers) will be able to configure mark roll-ups, add assessment opportunities and draw reports from all of the marks of the subjects of which he is assigned to. This level will also have all of the privileges of level 1 as well as level 2 users.
-\item Level 4. This level can be seen as a level with "root" privileges. It is intended to only be assigned to either one or two people and will give access to be able to all level 1, 2 ,3 and 4 privileges as well as be able to add and remove subjects from the system. 
 \end{enumerate}
 These tools will be available in a web based interface as well as an Android interface.
 
 \section{Vision}
-The vision of the project is to create multiple interface, for use by multiple user levels, that communicate with a centralized database to record mark results, audit, manage, manipulate, modify and report results based on these results into a pdf or csv format.\linebreak The system will be vastly scalable and allow multiple users to interface with the application at the same time. It will provide resource management utilities that will cater to the performance and reliability. Thus the client’s actions will be correctly reflected on the system.
+The vision of the project is to create multiple interfaces, for use by multiple user levels, that communicate with a centralized database to perform recording, auditing, managing, manipulating, modifying and reporting tasks on mark results. A PDF or csv format document will then be attainable from these results.\linebreak The system will be scalable and therefore allow multiple users to interface with the it at the same time. It will provide resource management utilities that will cater to the performance and reliability demands, ensuring the clients actions will be correctly reflected on the system.
 
 \section{Background}
-Lecturers, Tutors and Teaching assistants often find that recording and evaluating assessments that are issued to students is very inconvenient and inefficiently done. Even more so if a recoding or multiple recordings need to be modified. Crucial information seemed to get lost along the way, and needed to be addressed.\linebreak
-It was also troublesome to generate reports for different platforms as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. And use the data to better improve on the already implemented schema.\linebreak
-So with this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interfaces such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients who must communicate over a protected (encrypted) and synchronized framework to enable efficient and secure transactions. 
+Lecturers, Tutors and Teaching assistants often find that recording and evaluating student assessments is very inconveniently and inefficiently done. Even more so if a recoding or multiple recordings need to be modified. Crucial information seemed to get lost along the way.\linebreak
+It was also a cumbersome task to generate reports for different needs as well as perform statistical analysis of the data to determine vital constraints such as the performance of the students in assignments. \linebreak
+With this in mind, a centralized schema is designed where multiple clients can perform data input, output, manipulations and reporting at the same time, and to do so on different interfaces such as on conventional computers and mobile phones running android as well as on laptops and tablets.\linebreak These clients must communicate over a protected (encrypted) and synchronized framework to enable efficient, effective and secure transactions. 
 
 
 \section{Architecture requirements}
 \subsection{Access channel requirements}
 \begin{center}\textbf{Browser Clients}\end{center}
-	  \begin{itemize}
-                                                \item The browser clients that would be able to access the application from different platforms are as follows...
-                                                \begin{itemize}
-                                                                \item Google Chrome, FireFox Mozilla, Internet Explorer and Safari web browsers that run on conventional computers as well as tablets and mobile phones
-
+\begin{itemize}
+\item The browser clients that would be able to access the application from different platforms are as follows...
+\begin{itemize}
+\item Google Chrome, FireFox Mozilla, Internet Explorer and Safari and any web browsers that run on conventional computers as well as tablets and mobile phones.
 \item Because this access channel is architecture independent, it is cross platform.                                                               
-
-
-                                                \end{itemize}
-                                \end{itemize}
-                                
-\begin{center}\textbf{Application Application client}\end{center}
-	  \begin{itemize}
-                                                \item The Android clients that would be able to access the application from different platforms are as follows...
-                                                \begin{itemize}
-                                                                \item Any device that runs Android can use the application.
-                                                               
-
-
-                                                \end{itemize}
-                                \end{itemize}                                
-                                
+\end{itemize}
+\end{itemize}
+\begin{center}\textbf{Application client}\end{center}
+\begin{itemize}
+\item The Android clients that would be able to access the application are as follows...
+\begin{itemize}
+\item Any device that runs Android can use the application.
+\end{itemize}
+\end{itemize}                                
 \begin{center}\textbf{SOAP}\end{center}
-	  \begin{itemize}
-                                                \item The access channel is the segment that does network communication with the database and pass requests to it, as well as accept responses from it.
-                                \end{itemize}                                                                
-                                
+\begin{itemize}
+\item This is the access channel segment that handles network communication with the database and passes requests to it, as well as accept responses from it.
+\end{itemize}                                                                
 \begin{center}\textbf{Database}\end{center}
-	  \begin{itemize}
-                                                \item The database that is used for data storage, management,manipulation etc.
-                                \end{itemize}                                                                                                
-	
+\begin{itemize}
+\item The database that is used for data storage, management, manipulation will be instantiated using MySQL.
+\end{itemize}                                                                                                
 \subsection{Quality requirements}
 \begin{center}\textbf{Scalability}\end{center}
                                \begin{itemize}
-                                                \item The system is vastly scalable and should be able to handle a moderate (respectively) amount of users, before the performance starts deteriorating.
+                                                \item The system is vastly scalable and should be able to handle a moderately large amount of users, before the performance starts deteriorating.
                                                 \begin{itemize}
-                                                                \item The application uses a centralized MySQL database, and all the users across the different platforms will connect and communicate with it. 
+                                                                \item The application uses a centralized MySQL database, and all the users across the different platforms will connect to it and communicate with it. 
                                                                 \item The approximation of the maximum number of users that MySQL can handle before performance seizes to be optimal is about 150,000 users, this is due to the fact that the application uses this centralized MySQL database, and based on the MySQL documents it can handle about that amount, performing roughly a maximum of 4,294,967,295 connections to the database. 
                                                 \end{itemize}
                                 \end{itemize}
                 \begin{itemize}
-                        \item The system provides resource management utilities that cater to the performance and reliability of the system. Examples of these are the following thread, object and connection pooling amongst others.
+                        \item The system provides resource management utilities that cater to the performance and reliability of the system. Examples of these are thread, object and connection pooling amongst others.
                         \begin{itemize}
                                 \item Making the performance independent to the number of number of users.
                         \end{itemize}
@@ -104,7 +94,7 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                         \end{itemize}
                 \end{itemize}
                 \begin{itemize}
-                        \item The Session that is created when the user logs in with continues be checked for authentication throughout the time that the users is accessing the application. These checks could be done when the state of the application changes, when a request is sent or after a specified period of time.
+                        \item The Session that is created when the user logs in with continues be checked for authentication throughout the time that the user is accessing the application. These checks could be done when the state of the application changes, when a request is sent or after a specified period of time.
                         \begin{itemize}
                                 \item If the authentication fails at any point, then the user will be kicked out of the system and will be forced to try to log in again.
                         \end{itemize}
@@ -114,13 +104,13 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                 \begin{itemize}
                         \item Authorization tokens will be assigned to each user, irrespective of the sort of account that they may hold.
                         \begin{itemize}
-                                \item The tokens determine the user’s privileges.
+                                \item The tokens determine the users privileges.
                         \end{itemize}
                         \begin{itemize}
                                 \item They also determine what the user is allowed to read  e.g view all the marks or just specific ones.
                         \end{itemize}
                         \begin{itemize}
-                                \item They determine whether a user can modify marks, specific or any marks or fields at all.
+                                \item They determine whether a user can modify marks or any specific fields at all.
                         \end{itemize}
                         \begin{itemize}
                                 \item They determine whether a user can execute certain actions on the application.
@@ -130,7 +120,7 @@ So with this in mind, a centralized schema is designed where multiple clients ca
                         \item
                         The privileges layers that the tokens offer can be elevated /promoted to a lower state or a higher state with 0 being the most privileged state as depicted in diagram.\linebreak\begin{tabular}{|c|c|}\hline
                         Tokens   & Privileges \\\hline
-                        n & Less privileges then level n-1\\\hline
+                        n & More privileges then level n-1, n \textgreater  1\\\hline
                         1 & Less privileges then level 0\\\hline
                         0 & Most privileged\\\hline
                 \end{tabular}
