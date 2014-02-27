@@ -73,7 +73,7 @@ With this in mind, a centralized schema is designed where multiple clients can p
 \begin{itemize}
 \item The Android clients that would be able to access the application are as follows...
 \begin{itemize}
-\item Any device that runs Android can use the application.
+\item Any Android device that has an Android API level greater or equal to 14 can use the application.
 \end{itemize}
 \end{itemize}                                
 \indent\indent \textbf{SOAP}
@@ -472,6 +472,7 @@ These tools will be available in a web based interface as well as an Android int
 \includegraphics[scale=0.5]{"Diagram-Final".jpg}
 
 \section{Open Issues}
+The Minimum Android API level to be supported by the Android application was not properly specified by the client. The selected API level was selected trying to accommodate as many devices as possible. A potential issue can occur if the students are using a Android device that is too old. An issue which should be resolved by having the web interface.
 \section{Glossary}
 \begin{description}
 	\item[API] Application Program Interface specifying how some software components should interact with each other.
