@@ -328,7 +328,139 @@ These tools will be available in a web based interface as well as an Android int
 \includegraphics[scale=0.4]{"3 Reporting".jpg}
 
 \subsection{Use case prioritization}
+
+\textbf{Critical:}
+ \begin{itemize}
+	\item Security, the system must be secure to protect the marks.
+ \end{itemize}
+
+ \begin{itemize}
+	\item login, must be able to differenciate between users. 
+ \end{itemize}
+ \begin{itemize}
+	\item Auditing, must record changes made to the system for safety. 
+ \end{itemize}
+ \begin{itemize}
+	\item Booking, must get the information from the cs website.
+ \end{itemize}
+ \begin{itemize}
+	\item Assessments, must state the different practicals, test ens.
+ \end{itemize}
+ \begin{itemize}
+	\item Marks, the system is made to collect marks.
+ \end{itemize}
+ 
+ 
+ 
+\textbf{Important:}
+\begin{itemize}
+	\item Course, the system is used by multiple courses.
+ \end{itemize}
+\begin{itemize}
+	\item Course configuration, add and remove user.
+ \end{itemize}
+
+\textbf{Nice-To-Have:}
+ \begin{itemize}
+	\item Reporting, different ways the view the information.
+ \end{itemize}
+ \begin{itemize}
+	\item View course, view extra information.
+ \end{itemize}
+
+
 \subsection{Use case/Services contracts}
+ \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Login \\\hline
+                        Reference & Section 1.1\\\hline
+                        Trigger & The user accesses the login page of the application.\\\hline
+                        Precondition & The user must enter the correct username and password.\\\hline
+                        Basic Path & 1.	The user enters his/her login details and submits. 
+                        \\\linebreak &
+                        2.	 The system verifies that the information provided is valid.
+                        \\\hline
+                        Alternative & In step 2 if the information provided is invalid, the system will
+                        \\\linebreak & return the user to the login page.\\\hline
+                        Postcondition & The home page will be displayed.\\\hline
+                \end{tabular} 
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Auditing \\\hline
+                        Reference & Section 1.2\\\hline
+                        Trigger & The user changes in formation on the system.\\\hline
+                        Precondition & The user must be logged in.\\\hline
+                        Basic Path & 1.	The user performs an action that changes information on the
+                        syetem. \\\linebreak & 
+                        2.	 The system logs the change and the user, with date and time.\\\hline
+                        Alternative & N/A\\\hline
+                        Postcondition & The information will be logged in the audit log.\\\hline
+                \end{tabular} \\\linebreak           
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Booking \\\hline
+                        Reference & Section 2.1\\\hline
+                        Trigger & The user logs in.\\\hline
+                        Precondition & The system must be connected to the cs website.\\\hline
+                        Basic Path & The user enters the home page.\\\hline
+                        Alternative & The system can't access the cs website and  
+                        \\\linebreak & an error message is displayed.\\\hline
+                        Postcondition & The system displays the booking information.\\\hline
+                \end{tabular} \\\linebreak
+                
+  
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Assessments \\\hline
+                        Reference & Section 2.2\\\hline
+                        Trigger & The user accesses an assessment.\\\hline
+                        Precondition & The assessment must be available.\\\hline
+                        Basic Path & 1.	The user selects an assessment like a practical, test ens.\\\hline
+                        Alternative & There is no assessment to be selected.\\\hline
+                        Postcondition & The assessment information will be displayed.\\\hline
+                \end{tabular}\\\linebreak
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Marks \\\hline
+                        Reference & Section 2.2.5\\\hline
+                        Trigger & The user selects the marks of an assessment.\\\hline
+                        Precondition & The user must have selected an assessment.\\\hline
+                        Basic Path & 1.	The user marks to display the options available for marks.\\\hline
+                        Alternative & There is no marks available\\\hline
+                        Postcondition & The options is given to CRUD the marks.\\\hline
+                \end{tabular}\\\linebreak
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & View course \\\hline
+                        Reference & Section 2.3\\\hline
+                        Trigger & The user selects view course.\\\hline
+                        Precondition & The course must be available.\\\hline
+                        Basic Path & 1.	The user selects the course he wants to view.\\\hline
+                        Alternative & No courses are available.\\\hline
+                        Postcondition & The course information will be shown.\\\hline
+                \end{tabular}\\\linebreak
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Course configuration \\\hline
+                        Reference & Section 1.1\\\hline
+                        Trigger & The user selects course configuration.\\\hline
+                        Precondition & The user must have the right security priviliges.\\\hline
+                        Basic Path & 1.	The user selects course configurations. \\\linebreak &
+                        2.	 The changes the configurations.\\\hline
+                        Alternative & The user does not have the right security priviliges.\\\hline
+                        Postcondition & The configurations for the course is changed.\\\hline
+                \end{tabular}\\\linebreak
+                
+                \begin{tabular}{|l|l|}\hline
+                        Use Case Name   & Reporting \\\hline
+                        Reference & Section 1.1\\\hline
+                        Trigger & The user selects reporting.\\\hline
+                        Precondition & The must have selected a course.\\\hline
+                        Basic Path & 1.	The user selects the type of the report he wants and generates it. 
+                        \\\linebreak &2.	 The user saves the report.\\\hline
+                        Alternative & The user only views the report.\\\hline
+                        Postcondition & The report is saved.\\\hline
+                \end{tabular}
+                
+               
 \pagebreak
 \subsection{Process specifications}
 
